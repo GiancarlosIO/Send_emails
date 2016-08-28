@@ -93,5 +93,5 @@ Rails.application.configure do
     user_name: ENV['USER_GMAIL'],
     password: ENV['PASSWORD_GMAIL']
   }
-  config.action_mailer.default_url_options ={ host: 'localhost:3000' }
+  config.action_mailer.default_url_options ={ host: 'https://app-mailer.herokuapp.com' }
 end
