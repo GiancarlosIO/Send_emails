@@ -5,6 +5,8 @@ class CommentsController < ApplicationController
     @comment = @post.comments.new(comment_params)
     if @comment.save
       redirect_to post_path(@post)
+      PostMailer.post_commented(@comment).deliver_now
+      CommentMailer.comment_created(@comment).deliver_now
     else
       redirect_to :back, alert: 'can\'t create a post'
     end
